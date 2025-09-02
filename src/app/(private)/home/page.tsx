@@ -74,7 +74,7 @@ export default function Home() {
 						</TableHeader>
 						<TableBody>
 							{jobs.map((job) => (
-								<TableRow>
+								<TableRow key={job.id}>
 									<TableCell className="font-medium">{job.data}</TableCell>
 									<TableCell>{job.placa}</TableCell>
 									<TableCell>{job.motorista}</TableCell>
