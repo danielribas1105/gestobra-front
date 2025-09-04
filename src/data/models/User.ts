@@ -1,9 +1,10 @@
 export default interface User {
 	id: string
-	nome: string
+	name: string
 	cpf: string
 	email: string
-	telefone: number
-	status: "ativo" | "inativo"
+	phone: number
+	profile: string
+	active: boolean
 	imagemURL: string
 }
