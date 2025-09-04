@@ -3,18 +3,18 @@ import { z } from "zod"
 
 export const CarSchema = z.object({
    id: z.uuid(),
-   modelo: z.string().min(3, "O nome deve ter pelo menos 3 caracteres"),
-   placa: z.string()
+   model: z.string().min(3, "O nome deve ter pelo menos 3 caracteres"),
+   license: z.string()
       .regex(/^\d{3}-\d{4}$/, "A placa deve estar no formato XXX-XXXX")
       .refine(validateCPF, "Placa inválida"),
-   motorista: z.string(),
-   ano_fabricacao: z.number(),
+   driver: z.string(),
+   manufacture: z.number(),
    km: z.number(),
-   combustivel: z.string(),
-   robustez: z.boolean(),
-   capacidade_carga: z.string(),
-   versatilidade: z.string(),
-   status: z.enum(["ativo", "inativo", "pendente"]),
+   fuel: z.string(),
+   strength: z.boolean(),
+   capacity: z.string(),
+   versatility: z.string(),
+   active: z.boolean(),
    imagemURL: z.string(),
    /* imagemURL: z.url().optional(), */
 })
