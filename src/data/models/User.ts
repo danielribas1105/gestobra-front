@@ -1,8 +1,10 @@
-export default interface Car {
-	id: number
-	nome: string
+export default interface User {
+	id: string
+	name: string
 	cpf: string
-	telefone: number
-	status: "ativo" | "inativo"
+	email: string
+	phone: number
+	profile: string
+	active: boolean
 	imagemURL: string
 }
