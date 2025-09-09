@@ -1,4 +1,4 @@
-import { IconLogout } from "@tabler/icons-react"
+import { IconChecklist, IconLogout } from "@tabler/icons-react"
 import { Construction, FileText, Home, Truck, UserCircle2 } from "lucide-react"
 
 // Menu web application
@@ -17,6 +17,11 @@ export const itemsMenu = [
 		title: "Veículos",
 		url: "/cars",
 		icon: Truck,
+	},
+	{
+		title: "Manifestos",
+		url: "/statements",
+		icon: IconChecklist,
 	},
 	{
 		title: "Usuários",
