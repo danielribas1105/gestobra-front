@@ -8,11 +8,11 @@ export const WorkSchema = z.object({
   region: z.string(),
   city: z.string(),
   state: z.string(),
-  budget: z.string(),
+  budget: z.float32(),
   active: z.boolean(),
-  imagemURL: z.string(),
+  image_url: z.string(),
   /* imagemURL: z.url().optional(), */
 })
 
 // Gerar o tipo TypeScript automaticamente
-export type User = z.infer<typeof WorkSchema>
+export type Work = z.infer<typeof WorkSchema>

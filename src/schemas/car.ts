@@ -7,7 +7,7 @@ export const CarSchema = z.object({
    license: z.string()
       .regex(/^\d{3}-\d{4}$/, "A placa deve estar no formato XXX-XXXX")
       .refine(validateCPF, "Placa inválida"),
-   driver: z.string(),
+   driver_id: z.string(),
    manufacture: z.number(),
    km: z.number(),
    fuel: z.string(),
@@ -15,7 +15,7 @@ export const CarSchema = z.object({
    capacity: z.string(),
    versatility: z.string(),
    active: z.boolean(),
-   imagemURL: z.string(),
+   image_url: z.string(),
    /* imagemURL: z.url().optional(), */
 })
 
