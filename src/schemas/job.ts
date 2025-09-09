@@ -1,6 +1,6 @@
 import z from "zod"
    
-export const CarSchema = z.object({
+export const JobSchema = z.object({
    id: z.uuid(),
    origin_id: z.uuid(),
    destiny_id: z.uuid(),
@@ -13,4 +13,4 @@ export const CarSchema = z.object({
    updated_at: z.string()
 })
 
-export type Job = z.infer<typeof CarSchema>
+export type Job = z.infer<typeof JobSchema>
