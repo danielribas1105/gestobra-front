@@ -10,7 +10,7 @@ const users: User[] = [
 		phone: "(11) 99999-9999",
 		profile: "admin",
 		active: true,
-		imagemURL: "/user/caminhao-basculante-cacamba.jpg",
+		image_url: "/user/caminhao-basculante-cacamba.jpg",
 	},
 	{
 		id: "236453da-0ce2-4ab9-8e87-d14eac902ad0",
@@ -20,7 +20,7 @@ const users: User[] = [
 		phone: "(11) 99999-9999",
 		profile: "driver",
 		active: true,
-		imagemURL: "/user/caminhao-basculante-cacamba.jpg",
+		image_url: "/user/caminhao-basculante-cacamba.jpg",
 	},
 	{
 		id: "bf5e567f-99bd-4ccc-89c5-119ef28a433b",
@@ -30,7 +30,7 @@ const users: User[] = [
 		phone: "(11) 99999-9999",
 		profile: "driver",
 		active: true,
-		imagemURL: "/user/caminhao-basculante-cacamba.jpg",
+		image_url: "/user/caminhao-basculante-cacamba.jpg",
 	},
 	{
 		id: "a08d1f59-eca7-476a-98f2-76e8737d2114",
@@ -40,7 +40,7 @@ const users: User[] = [
 		phone: "(11) 99999-9999",
 		profile: "user",
 		active: true,
-		imagemURL: "/user/caminhao-basculante-cacamba.jpg",
+		image_url: "/user/caminhao-basculante-cacamba.jpg",
 	},
 ]
 

@@ -1,9 +1,12 @@
 export default interface Job {
 	id: string
-	data: string
-	placa: string
-	motorista: string
+	origin: string
+	destiny: string
+	car_id: string
+	user_id: string
+	statement_id: string
 	m3: number
-	origem: string
-	destino: string
+	status: string
+	created_at: string
+	updated_at: string
 }

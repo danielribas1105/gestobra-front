@@ -1,10 +1,11 @@
 export default interface User {
 	id: string
 	name: string
-	cpf: string
 	email: string
+	cpf: string
 	phone: number
 	profile: string
 	active: boolean
-	imagemURL: string
+	image_url: string
+	password_hash: string
 }

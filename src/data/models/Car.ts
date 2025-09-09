@@ -2,11 +2,11 @@ export default interface Car {
 	id: number
 	model: string
 	license: string
-	driver: string
+	driver_id: string
 	manufacture: number
 	km: number
 	fuel: string
-	stringength: string
+	strength: string
 	capacity: string
 	versatility: string
 	active: boolean

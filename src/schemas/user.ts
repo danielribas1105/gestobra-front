@@ -12,7 +12,7 @@ export const UserSchema = z.object({
 		.regex(/^\(\d{2}\)\s\d{4,5}-\d{4}$/, "Telefone deve estar no formato (XX) XXXXX-XXXX"),
 	profile: z.string(),
 	active: z.boolean(),
-	imagemURL: z.string(),
+	image_url: z.string(),
 	/* imagemURL: z.url().optional(), */
 })
 
