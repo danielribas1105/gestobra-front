@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Tests
 
 ```
-** Language: pt **
+Language: pt
 Funcionalidade: Login de usuário
 
   Cenário: Login com sucesso
