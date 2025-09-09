@@ -37,14 +37,61 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Tests
 
+### Test 1
 ```
-** Language: pt **
+Language: pt
 Funcionalidade: Login de usuário
 
   Cenário: Login com sucesso
     Dado que estou na página de login
-    Quando eu insiro meu nome de usuário "teste" e minha senha "123"
+    Quando eu insiro usuário senha válidos
     E clico no botão "Login"
-    Então eu devo ser redirecionado para a página inicial
+    Então eu devo ser redirecionado para a página inicial com a lista de estudos
+```
+
+### Test 2
+```
+Language: pt
+Funcionalidade: Abrir caso
+
+  Cenário: Abrir caso selecionado com sucesso
+    Dado que estou na página com a lista de casos
+    Quando eu clico em um dos casos
+    Então eu devo ser redirecionado para a página de visualização do caso
+```
+
+### Test 3
+```
+Language: pt
+Funcionalidade: Caso aberto com sucesso
+
+  Cenário: Após seleção, carregar as informações do caso
+    Dado que estou na página de visualização do caso
+    Verificar se todas as informações foram carregadas
+    Incluindo o navio 2D e 3D
+```
+
+### Test 4
+```
+Language: pt
+Funcionalidade: Nova simulação
+
+  Cenário: Gerar uma nova simulação
+    Abrir o modal "+ Simulate"
+    Setar as informações necessárias
+    Quando eu clico no botão "Simulate", uma nova simulação será iniciada
+```
+
+### Test 5
+```
+Language: pt
+Funcionalidade: Novo Job
+
+  Cenário: Salvar um novo job
+    Abrir o modal "Jobs"
+    Para acompanhar a execução da simulação
+    Ao ser finalizada, clicar no card
+    Para carregar as informações do job no cenário
+    Quando eu clico no botão "Simulate", uma nova simulação será iniciada
 ```
 
