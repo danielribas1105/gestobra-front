@@ -8,7 +8,7 @@ const jobs: Job[] = [
 		car_id: "2dba4ce2-09c7-41d0-9085-0e3b12d0342a",
 		user_id: "f5ed9bca-b60f-4f3d-a001-5b2da372d05f",
 		statement_id: "4a321c92-14c6-40de-9e2f-fbd47eac5c3f",
-		m3: 20,
+		m3: 40,
 		status: "true",
 		created_at: "26/08/25",
 		updated_at: "26/08/25",

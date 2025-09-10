@@ -12,6 +12,8 @@ import {
 import TitlePage from "@/components/ui/title-page"
 import { useEffect, useState } from "react"
 import jobs from "@/data/constants/Jobs"
+import { DataTable } from "@/components/table/data-table"
+import { columns } from "@/components/table/columns"
 
 interface ApiStatus {
 	status: string
@@ -59,39 +61,7 @@ export default function Home() {
 						<div className="mt-2 text-sm text-gray-400">Última atualização: {status.timestamp}</div>
 					</div>
 				</div>
-				<div>
-					<Table>
-						<TableCaption>Lista das vigens realizadas</TableCaption>
-						<TableHeader>
-							<TableRow>
-								<TableHead className="w-[100px]">Data</TableHead>
-								<TableHead>Origem</TableHead>
-								<TableHead>Destino</TableHead>
-								<TableHead>Placa</TableHead>
-								<TableHead>Motorista</TableHead>
-								<TableHead className="text-right">M3</TableHead>
-								<TableHead>Manifesto</TableHead>
-								<TableHead>Usuário</TableHead>
-								<TableHead>Status</TableHead>
-							</TableRow>
-						</TableHeader>
-						<TableBody>
-							{jobs.map((job) => (
-								<TableRow key={job.id}>
-									<TableCell className="font-medium">{job.created_at}</TableCell>
-									<TableCell>{job.origin_id}</TableCell>
-									<TableCell>{job.destiny_id}</TableCell>
-									<TableCell>{job.car_id}</TableCell>
-									<TableCell>{job.car_id}</TableCell>
-									<TableCell className="text-right">{job.m3}</TableCell>
-									<TableCell>{job.statement_id}</TableCell>
-									<TableCell>{job.user_id}</TableCell>
-									<TableCell>{job.status}</TableCell>
-								</TableRow>
-							))}
-						</TableBody>
-					</Table>
-				</div>
+				<DataTable columns={columns} data={jobs}/>
 			</section>
 		</PageLayout>
 	)
