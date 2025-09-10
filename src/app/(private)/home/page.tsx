@@ -65,22 +65,28 @@ export default function Home() {
 						<TableHeader>
 							<TableRow>
 								<TableHead className="w-[100px]">Data</TableHead>
+								<TableHead>Origem</TableHead>
+								<TableHead>Destino</TableHead>
 								<TableHead>Placa</TableHead>
 								<TableHead>Motorista</TableHead>
 								<TableHead className="text-right">M3</TableHead>
-								<TableHead>Origem</TableHead>
-								<TableHead>Destino</TableHead>
+								<TableHead>Manifesto</TableHead>
+								<TableHead>Usuário</TableHead>
+								<TableHead>Status</TableHead>
 							</TableRow>
 						</TableHeader>
 						<TableBody>
 							{jobs.map((job) => (
 								<TableRow key={job.id}>
-									<TableCell className="font-medium">{job.data}</TableCell>
-									<TableCell>{job.placa}</TableCell>
-									<TableCell>{job.motorista}</TableCell>
+									<TableCell className="font-medium">{job.created_at}</TableCell>
+									<TableCell>{job.origin_id}</TableCell>
+									<TableCell>{job.destiny_id}</TableCell>
+									<TableCell>{job.car_id}</TableCell>
+									<TableCell>{job.car_id}</TableCell>
 									<TableCell className="text-right">{job.m3}</TableCell>
-									<TableCell>{job.origem}</TableCell>
-									<TableCell>{job.destino}</TableCell>
+									<TableCell>{job.statement_id}</TableCell>
+									<TableCell>{job.user_id}</TableCell>
+									<TableCell>{job.status}</TableCell>
 								</TableRow>
 							))}
 						</TableBody>
