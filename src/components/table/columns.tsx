@@ -28,7 +28,7 @@ export const columns: ColumnDef<Job>[] = [
 		cell: ({ row }) => {
 			return (
 				<div className="flex space-x-2">
-					<span className="max-w-[500px] truncate font-medium">{row.getValue("license")}</span>
+					<span className="max-w-[500px] truncate font-medium">{row.getValue("car_id")}</span>
 				</div>
 			)
 		},
