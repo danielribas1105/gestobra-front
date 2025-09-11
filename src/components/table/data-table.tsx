@@ -1,23 +1,76 @@
 "use client"
-import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table"
+import { ColumnDef, flexRender, getCoreRowModel, Row, useReactTable } from "@tanstack/react-table"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { DataTableToolbar } from "./data-table-toolbar"
+import {
+	DropdownMenu,
+	DropdownMenuCheckboxItem,
+	DropdownMenuContent,
+	DropdownMenuTrigger,
+} from "../ui/dropdown-menu"
+import { Button } from "../ui/button"
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[]
 	data: TData[]
+	useFilters?: boolean
+	closeDialog?: () => void
 }
 
-export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+const globalFilterFn = <TData,>(row: Row<TData>, columnId: string, filterValue: string) => {
+	const search = filterValue.toLowerCase()
+	const keys = ["origin", "destiny", "car", "user", "status"]
+
+	return keys.some((key) => {
+		const value = row.original[key as keyof TData]
+		return String(value ?? "")
+			.toLowerCase()
+			.includes(search)
+	})
+}
+
+export function DataTable<TData, TValue>({
+	columns,
+	data,
+	useFilters,
+	closeDialog,
+}: DataTableProps<TData, TValue>) {
 	const table = useReactTable({
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),
+		globalFilterFn,
 	})
 
 	return (
 		<div className="flex flex-col gap-2">
-			<DataTableToolbar table={table}/>
+			<div className="flex items-center justify-between">
+				<DataTableToolbar table={table} />
+				<DropdownMenu>
+					{!useFilters && (
+						<DropdownMenuTrigger asChild>
+							<Button variant="outline" className="flex flex-row items-center space-x-2">
+								View
+							</Button>
+						</DropdownMenuTrigger>
+					)}
+					<DropdownMenuContent align="end">
+						{table
+							.getAllColumns()
+							.filter((column) => column.getCanHide())
+							.map((column) => (
+								<DropdownMenuCheckboxItem
+									key={column.id}
+									className="capitalize"
+									checked={column.getIsVisible()}
+									onCheckedChange={(value) => column.toggleVisibility(!!value)}
+								>
+									{column.id}
+								</DropdownMenuCheckboxItem>
+							))}
+					</DropdownMenuContent>
+				</DropdownMenu>
+			</div>
 			<div className="overflow-hidden rounded-md border">
 				<Table>
 					<TableHeader>
