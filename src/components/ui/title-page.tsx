@@ -11,7 +11,7 @@ interface TitlePageProps {
 }
 
 export default function TitlePage({ title, className, placeholder, textButton }: TitlePageProps) {
-	console.log("placeholder", placeholder)
+	
 	return (
 		<div
 			className={`${className ?? ""} flex flex-col md:flex-row justify-between items-center gap-3 md:gap-20`}

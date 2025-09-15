@@ -50,7 +50,7 @@ export default function Home() {
 		<PageLayout>
 			<section>
 				<div className="flex flex-col gap-3 md:gap-0">
-					<TitlePage title="GestObra" placeholder="Busca" textButton="Adicionar Viagem" />
+					<TitlePage title="GestObra" textButton="Adicionar Viagem" />
 					<div className="flex flex-col items-start justify-evenly text-xl">
 						<div>
 							Status:{" "}
