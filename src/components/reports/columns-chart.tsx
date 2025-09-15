@@ -1,6 +1,7 @@
 "use client"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "../ui/chart"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 
 const chartData = [
 	{ month: "January", desktop: 186, mobile: 80 },
@@ -24,8 +25,13 @@ const chartConfig = {
 
 export default function ColumnsChart() {
 	return (
-		<div className="w-full h-60">
-			<ChartContainer config={chartConfig} className="min-h-[100px] w-48">
+		<Card className="py-2 px-0">
+			<CardHeader>
+				<CardTitle>Título Gráfico</CardTitle>
+				<CardDescription>Descrição do gráfico</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<ChartContainer config={chartConfig}>
 				<BarChart accessibilityLayer data={chartData}>
 					<CartesianGrid vertical={false} />
 					<XAxis
@@ -40,7 +46,8 @@ export default function ColumnsChart() {
 					<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
 					<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
 				</BarChart>
-			</ChartContainer>
-		</div>
+				</ChartContainer>
+			</CardContent>
+		</Card>
 	)
 }

@@ -8,7 +8,11 @@ export default function ReportsPage() {
 			<section>
 				<div className="flex flex-col gap-5">
 					<TitlePage title="Relatórios" />
-					<ColumnsChart/>
+					<div className="grid grid-cols-3 gap-5">
+						<ColumnsChart/>
+						<ColumnsChart/>
+						<ColumnsChart/>
+					</div>
 				</div>
 			</section>
 		</PageLayout>
