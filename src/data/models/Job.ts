@@ -3,6 +3,7 @@ export default interface Job {
 	origin: string
 	destiny: string
 	car_id: string
+	driver_id: string
 	user_id: string
 	statement_id: string
 	m3: number

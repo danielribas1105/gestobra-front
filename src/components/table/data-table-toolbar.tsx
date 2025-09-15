@@ -49,42 +49,49 @@ export function DataTableToolbar<TData>({ table, useFilters }: DataTableToolbarP
 					<DataTableFacetedFilter
 						column={table.getColumn("origin_id")}
 						title="Origem"
-						preSelectedValue={useFilters ? filters?.moduleName : undefined}
+						/* preSelectedValue={useFilters ? filters?.moduleName : undefined} */
 					/>
 				)}
 				{table.getColumn("destiny_id") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("destiny_id")}
 						title="Destino"
-						preSelectedValue={useFilters ? filters?.equipmentName : undefined}
+						/* preSelectedValue={useFilters ? filters?.equipmentName : undefined} */
 					/>
 				)}
 				{table.getColumn("car_id") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("car_id")}
 						title="Placa"
-						preSelectedValue={useFilters ? filters?.flangeName : undefined}
+						/* preSelectedValue={useFilters ? filters?.flangeName : undefined} */
+					/>
+				)}
+				{table.getColumn("user_id") && (
+					<DataTableFacetedFilter
+						column={table.getColumn("user_id")}
+						title="Motorista"
+						/* preSelectedValue={useFilters ? filters?.flangeName : undefined} */
 					/>
 				)}
 				{table.getColumn("user_id") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("user_id")}
 						title="Usuário"
-						preSelectedValue={useFilters ? filters?.leakage : undefined}
+						/* preSelectedValue={useFilters ? filters?.leakage : undefined} */
 					/>
 				)}
 				{table.getColumn("statement_id") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("statement_id")}
 						title="Manifesto"
-						useFilters={useFilters}
+						/* useFilters={useFilters} */
 					/>
 				)}
 				{table.getColumn("status") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("status")}
 						title="Status"
-						useFilters={useFilters}
+						/* useFilters={useFilters} */
 					/>
 				)}
 				{isFiltered && !useFilters && (

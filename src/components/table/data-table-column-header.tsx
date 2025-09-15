@@ -25,6 +25,8 @@ export function DataTableColumnHeader<TData, TValue>({
 		return <div className={cn(className)}>{title}</div>
 	}
 
+	const columnId = column.id ?? column.columnDef.id
+
 	return (
 		<div className={cn("flex items-center space-x-2", className)}>
 			<DropdownMenu>
@@ -49,7 +51,7 @@ export function DataTableColumnHeader<TData, TValue>({
 						<ArrowDown className="h-3.5 w-3.5 text-muted-foreground/70" />
 						Decrescente
 					</DropdownMenuItem>
-					{columnsThatCanBeHidden.includes(column.id || (column.columnDef as any)) && (
+					{columnId && columnsThatCanBeHidden.includes(columnId) && (
 						<>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem onClick={() => column.toggleVisibility(false)}>

@@ -1,5 +1,5 @@
 "use client"
-import { ColumnDef, flexRender, getCoreRowModel, Row, useReactTable } from "@tanstack/react-table"
+import { ColumnDef, flexRender, getCoreRowModel, getFacetedRowModel, getFacetedUniqueValues, getFilteredRowModel, Row, useReactTable } from "@tanstack/react-table"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { DataTableToolbar } from "./data-table-toolbar"
 import {
@@ -40,6 +40,9 @@ export function DataTable<TData, TValue>({
 		columns,
 		getCoreRowModel: getCoreRowModel(),
 		globalFilterFn,
+		getFilteredRowModel: getFilteredRowModel(),
+		getFacetedRowModel: getFacetedRowModel(),
+		getFacetedUniqueValues: getFacetedUniqueValues(),
 	})
 
 	return (
@@ -91,7 +94,7 @@ export function DataTable<TData, TValue>({
 					<TableBody>
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
-								<TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+								<TableRow key={row.id} /* data-state={row.getIsSelected() && "selected"} */>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>
 											{flexRender(cell.column.columnDef.cell, cell.getContext())}
