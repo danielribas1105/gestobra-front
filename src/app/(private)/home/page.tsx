@@ -14,6 +14,7 @@ import { useEffect, useState } from "react"
 import jobs from "@/data/constants/Jobs"
 import { DataTable } from "@/components/table/data-table"
 import { columns } from "@/components/table/columns"
+import { IconShareplay, IconTruck } from "@tabler/icons-react"
 
 interface ApiStatus {
 	status: string
@@ -54,8 +55,8 @@ export default function Home() {
 					<div className="flex flex-col items-start justify-evenly text-xl">
 						<div>
 							Status:{" "}
-							<span className={status.status === "online" ? "text-green-600" : "text-red-600"}>
-								{status.status}
+							<span className={status.status === "transit" ? "text-green-600" : "text-red-600"}>
+								{status.status === "transit" ? <IconTruck/> : <IconShareplay/>}
 							</span>
 						</div>
 						<div className="mt-2 text-sm text-gray-400">Última atualização: {status.timestamp}</div>
