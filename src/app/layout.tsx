@@ -2,6 +2,7 @@ import { QueryProvider } from "@/providers/query-provider"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Tomorrow } from "next/font/google"
 import "./globals.css"
+import { GlobalProviders } from "@/providers/global-providers"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -31,10 +32,12 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt-BR">
-			<body className={`${geistSans.variable} ${tomorrow.variable} antialiased`}>
-				<QueryProvider>{children}</QueryProvider>
-			</body>
-		</html>
+		<GlobalProviders>
+			<html lang="pt-BR">
+				<body className={`${geistSans.variable} ${tomorrow.variable} antialiased`}>
+					<QueryProvider>{children}</QueryProvider>
+				</body>
+			</html>
+		</GlobalProviders>
 	)
 }

@@ -52,7 +52,7 @@ export default function LoginPage() {
         </div>
         <div className="flex flex-1 flex-col gap-3 items-center">
           <div className="w-full max-w-xs">
-            <LoginForm />
+            {/* <LoginForm /> */}
           </div>
           <div>
             Status:{" "}
