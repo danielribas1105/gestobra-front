@@ -36,7 +36,7 @@ export const QUERY_KEYS = Object.fromEntries(
 	]),
 ) as Record<ApiRoutesFirstLevel, Record<ApiRoutesSecondLevel, string[]>>
 
-export const privateRoutes = ["/user", "/work", "/car", "/statement", "job"]
+export const privateRoutes = ["/users", "/works", "/cars", "/statements", "/reports"]
 
 export const defaultPrivateRoute = "/home"
 export const defaultPublicRoute = "/"
