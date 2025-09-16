@@ -1,5 +1,5 @@
-import { tokensLifetime } from "@/config/auth";
-import { COOKIE_NAMES, getCookieName } from "@/config/cookies";
+import { tokensLifetime } from "@/config/auth"
+import { COOKIE_NAMES, getCookieName } from "@/config/cookies"
 import {
   apiRoutes,
   defaultPrivateRoute,
