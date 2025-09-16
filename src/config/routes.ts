@@ -1,5 +1,9 @@
 import { UUID } from "crypto"
 
+export const baseUrls = {
+	backend: process.env.NEXT_PUBLIC_API_URL ?? "",
+} as const satisfies Record<string, string>
+
 export const apiRoutes = {
 	auth: {
 		login: "/home",
