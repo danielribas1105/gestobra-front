@@ -6,12 +6,13 @@ export const baseUrls = {
 
 export const apiRoutes = {
 	auth: {
-		login: "/home",
-		refresh: "/home",
+		login: "/auth/token",
+		refresh: "/auth/refresh",
 	},
 	user: {
-		getAll: "/user",
+		register: "/user/register",
 		me: "/user/me",
+		getAll: "/user",
 	},
 	car: {
 		getAll: "/car",
