@@ -7,7 +7,7 @@ export const baseUrls = {
 export const apiRoutes = {
 	auth: {
 		login: "/home",
-		refresh: "/",
+		refresh: "/home",
 	},
 	user: {
 		getAll: "/user",
@@ -43,4 +43,4 @@ export const QUERY_KEYS = Object.fromEntries(
 export const privateRoutes = ["/users", "/works", "/cars", "/statements", "/reports"]
 
 export const defaultPrivateRoute = "/home"
-export const defaultPublicRoute = "/"
+export const defaultPublicRoute = "/login"

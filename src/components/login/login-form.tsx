@@ -11,6 +11,7 @@ import { Alert, AlertDescription, AlertTitle } from "../ui/alert"
 import { IconAlertSquareRounded } from "@tabler/icons-react"
 import { useRouter } from "next/navigation"
 import { apiRoutes } from "@/config/routes"
+import { useLogin } from "@/hooks/auth/use-login"
 
 const LoginSchema = z.object({
 	email: z.string().email(),
@@ -18,11 +19,11 @@ const LoginSchema = z.object({
 })
 
 export const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<"form">) => {
-	//const { error, mutate, isPending } = useLogin()
-	const error = false
-	const isPending = false
+	const { error, mutate, isPending } = useLogin()
+	//const error = false
+	//const isPending = false
 
-	const router = useRouter()
+	//const router = useRouter()
 
 	const form = useForm<z.infer<typeof LoginSchema>>({
 		resolver: zodResolver(LoginSchema),
@@ -32,13 +33,13 @@ export const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRe
 		},
 	})
 
-	const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
-		console.log("values", values)
-		console.log("apiRoutes", apiRoutes.auth.login)
-		router.push(`${apiRoutes.auth.login}`)
-		/* mutate({
-      body: { username: data.email, password: data.password },
-    }) */
+	const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
+		/* console.log("data", data)
+		console.log("apiRoutes", apiRoutes.auth.login) */
+		//router.push(`${apiRoutes.auth.login}`)
+		mutate({
+			body: { username: data.email, password: data.password },
+		})
 	}
 
 	return (
