@@ -34,8 +34,8 @@ export const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRe
 	})
 
 	const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
-		/* console.log("data", data)
-		console.log("apiRoutes", apiRoutes.auth.login) */
+		console.log("data", data)
+		console.log("apiRoutes", apiRoutes.auth.login)
 		//router.push(`${apiRoutes.auth.login}`)
 		mutate({
 			body: { username: data.email, password: data.password },
@@ -58,7 +58,7 @@ export const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRe
 						<Alert variant="destructive" className="text-start">
 							<IconAlertSquareRounded className="h-4 w-4" />
 							<AlertTitle className="mt-1">Error message</AlertTitle>
-							<AlertDescription>Erro qualquer</AlertDescription>
+							<AlertDescription>{error.message}</AlertDescription>
 						</Alert>
 					)}
 				</div>

@@ -15,6 +15,8 @@ export const useLogin = () => {
 	const { toast } = useToast()
 
 	const fetchTokens = async ({ body }: { body: { username: string; password: string } }) => {
+		console.log("fetchTokens", body.username)
+		console.log("fetchTokens", body.password)
 		return await fetchBackend
 			.unauthPostForm<LoginResponse>(apiRoutes.auth.login, body, {
 				ignoreAuthError: true,
@@ -42,8 +44,8 @@ export const useLogin = () => {
 				}
 
 				toast({
-					title: "Something went wrong",
-					description: "Please try again",
+					title: "Alguma coisa deu errado!",
+					description: "Por favor, tente novamente.",
 					variant: "default",
 				})
 
