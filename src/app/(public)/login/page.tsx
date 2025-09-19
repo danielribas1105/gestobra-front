@@ -1,9 +1,9 @@
 import logo from "@/../public/logo/logo-gestobra-512x512.png"
+import fotoObra from "@/../public/app-gestobra-01.jpg"
 import { LoginForm } from "@/components/login/login-form"
 import Image from "next/image"
 
 export default function LoginPage() {
-
 	return (
 		<div className="grid min-h-svh lg:grid-cols-2">
 			<div className="flex flex-col gap-6 py-4">
@@ -17,12 +17,13 @@ export default function LoginPage() {
 			</div>
 			<div className="relative hidden bg-muted lg:block">
 				<Image
-					src=""
+					src={fotoObra}
 					alt="Image"
 					className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
 					width={1024}
 					height={1024}
 				/>
+				<div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 			</div>
 		</div>
 	)
